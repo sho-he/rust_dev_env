@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  rust_app:
+    image: rust:latest
+    container_name: rust_app
+    working_dir: /app
+    volumes:
+      - ./:/app
+    tty: true
+    environment:
+      USER: user # cargo で必要になる
+      CARGO_BUILD_TARGET_DIR: /app/target
+
